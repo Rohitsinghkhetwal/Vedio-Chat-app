@@ -1,5 +1,5 @@
 import * as secureStore from "expo-secure-store"
-import { useContext, useState, useEffect, ReactNode, createContext } from "react"
+import { useContext, useState, useEffect, createContext } from "react"
 
 interface AuthProps {
     authState: {token: string | null; authenticated: boolean | null; user_id: string | null};
@@ -7,10 +7,6 @@ interface AuthProps {
     onLogin: (email: string, password: string) => Promise<any>;
     onLogout: () => Promise<any>;
     initialized: boolean
-}
-
-interface AuthProviderProp {
-    children: ReactNode
 }
 
 const TOKEN_KEY = 'my-stream-token';
@@ -21,7 +17,8 @@ export const useAuth = () => {
     return useContext(AuthContext)
 }
 
-export const AuthProvider = ({ children }: AuthProviderProp) => {
+
+export const AuthProvider = ({ children }: any) => {
   const [authState, setAuthState] = useState<{
     token: string | null;
     user_id: string | null;
@@ -69,7 +66,7 @@ export const AuthProvider = ({ children }: AuthProviderProp) => {
       });
 
       await secureStore.setItemAsync(TOKEN_KEY, JSON.stringify(json));
-      return result;
+      return json;
     } catch (error) {
       return {
         err: true,
@@ -77,6 +74,7 @@ export const AuthProvider = ({ children }: AuthProviderProp) => {
       };
     }
   };
+
 
   const register = async (email: string, password: string) => {
     try{
@@ -100,10 +98,9 @@ export const AuthProvider = ({ children }: AuthProviderProp) => {
       return {
         err: true
       }
-
-
     }
   };
+
   const logout = async () => {
     await secureStore.deleteItemAsync(TOKEN_KEY);
     setAuthState({
@@ -126,3 +123,5 @@ export const AuthProvider = ({ children }: AuthProviderProp) => {
 
   
 };
+
+
