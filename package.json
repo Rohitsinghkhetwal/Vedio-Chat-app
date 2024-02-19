@@ -44,14 +44,18 @@
     "react-native-gesture-handler": "~2.14.0",
     "react-native-incall-manager": "^4.1.0",
     "react-native-loading-spinner-overlay": "^3.0.1",
+    "react-native-modal-prompt": "^0.0.2",
+    "react-native-prompt-android": "^1.1.0",
     "react-native-reanimated": "~3.6.2",
     "react-native-safe-area-context": "4.8.2",
     "react-native-screens": "~3.29.0",
     "react-native-svg": "14.1.0",
     "react-native-toast-message": "^2.2.0",
     "react-native-web": "~0.19.6",
+    "react-native-webrtc": "^118.0.1",
     "stream-chat-expo": "^5.24.0",
-    "stream-chat-react-native": "^5.24.0"
+    "stream-chat-react-native": "^5.24.0",
+    "expo-av": "~13.10.5"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

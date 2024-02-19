@@ -23,10 +23,10 @@ const InitialLayout = () => {
     const authGroup = segments[0] === '(inside)'
 
     if(authState?.authenticated || !authGroup){
-      console.log("authenticated with auth group  !", authState);
+      
       router.replace('/(inside)')
     }else if(!authState?.authenticated && authGroup){
-      console.log("not authenticated !");
+      
       client?.disconnectUser()
       router.replace("/")
     }
@@ -34,7 +34,7 @@ const InitialLayout = () => {
   }, [authState, initialized])
 
   useEffect(() => {
-    console.log("creating client - =====>", authState);
+    
     if(authState?.authenticated && authState.token){
       
       const user: User = {id: authState.user_id!}
@@ -44,7 +44,7 @@ const InitialLayout = () => {
           user,
           token: authState.token,
         });
-        console.log("client created !");
+        
         setClient(NewClient);
       }catch(err){
         console.log("error in creating client !", err);
