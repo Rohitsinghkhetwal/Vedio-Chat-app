@@ -52,10 +52,8 @@
     "react-native-svg": "14.1.0",
     "react-native-toast-message": "^2.2.0",
     "react-native-web": "~0.19.6",
-    "react-native-webrtc": "^118.0.1",
     "stream-chat-expo": "^5.24.0",
-    "stream-chat-react-native": "^5.24.0",
-    "expo-av": "~13.10.5"
+    "stream-chat-react-native": "^5.24.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

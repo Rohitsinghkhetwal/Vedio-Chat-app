@@ -18,8 +18,6 @@ export default function Page() {
       const call = client.call("default", id);
       await call.join({create: true})
       setCalling(Calling)
-
-
     }
     Join();
 

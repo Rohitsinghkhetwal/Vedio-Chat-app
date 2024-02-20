@@ -16,14 +16,31 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bitcode": false
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.anonymous.GlimsApp"
+      "package": "com.anonymous.GlimsApp",
+      "permissions": [
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.FOREGROUND_SERVICE_MICROPHONE",
+        "android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION",
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_CONNECT",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.CAMERA",
+        "android.permission.INTERNET",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        "android.permission.WAKE_LOCK"
+      ]
     },
     "web": {
       "bundler": "metro",
@@ -33,7 +50,7 @@
     "plugins": [
       "expo-router",
       "expo-secure-store",
-       "@stream-io/video-react-native-sdk",
+      "@stream-io/video-react-native-sdk",
       [
         "@config-plugins/react-native-webrtc",
         {
@@ -45,13 +62,24 @@
         "expo-build-properties",
         {
           "android": {
-            "extraMavenRepos": ["$rootDir/../../../node_modules/@notifee/react-native/android/libs"]
+            "extraMavenRepos": [
+              "$rootDir/../../../node_modules/@notifee/react-native/android/libs"
+            ]
           }
         }
       ]
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "d466d79b-b89d-4369-9423-386ef255e4a5"
+      }
+    },
+    "owner": "rohit0singh"
   }
 }
