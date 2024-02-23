@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: WIDTH > HEIGHT ? "40%" : 22,
     justifyContent: "center",
-    backgroundColor: "white",
+    backgroundColor: "#c3cab7",
   },
   header: {
     fontSize: 30,
@@ -111,16 +111,14 @@ const styles = StyleSheet.create({
   },
   button: {
     color: "white",
-    fontSize: 17
+    fontSize: 17,
   },
   signUpbtn: {
     alignItems: "center",
     marginTop: 10,
-    
   },
   signuptxt: {
     fontSize: 15,
-    color: 'blue'
-
-  }
+    color: "blue",
+  },
 });
